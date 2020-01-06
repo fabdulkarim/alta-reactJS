@@ -649,3 +649,32 @@ section {
     /* padding-left: 15px; */
     text-align: center;
 }
+/* LIST ARTICLE PAGE */
+
+.list-article-item {
+    border: 2px solid #ececec;
+    border-radius: 2px;
+    margin-bottom: 25px;
+}
+
+.list-article-item .article-item-title {
+    padding: 20px;
+    font-weight: bold;
+}
+
+.list-article-item .article-item-text {
+    padding: 10px 20px;
+}
+
+.list-article-item .article-item-updated {
+    font-size: 12px;
+    padding: 10px 20px;
+    color: #808080;
+}
+.icon-listing {
+    padding: 10px 0px;
+    width: 100%;
+    margin: 0;
+    margin-top: 10px;
+    background-color: #ececec;
+}
