@@ -14,14 +14,18 @@ class PageQuery extends Component {
         mainList: [],
         mainLoading: true,
         nowTime: new Date(),
-        search: null
+        search: ""
     };
 
     reload = async (...restArgument) => {
+        console.log(this.props.match.params.cat)
         const category = this.props.match.params.cat
+        console.log(category)
         const self = this;
-        let newUrl;
-        (this.state.search === null) ? newUrl = urlCombined + "&category=" + category : newUrl = urlCombined + "&search=" + this.state.search
+        var newUrl;
+        (restArgument.length == 0) ? newUrl = urlCombined + "&category=" + category : newUrl = urlCombined + "&q=" + restArgument[0]
+        console.log("url")
+        console.log(newUrl)
         await axios.get(newUrl + "&pageSize=10")
             .then(function (response) {
                 self.setState({ mainList: response.data.articles, mainLoading: false});
@@ -30,10 +34,14 @@ class PageQuery extends Component {
         self.setState({ nowTime: new Date() })
     }
 
-    handleChange = e => {
-        let value = e.target.value
-        this.setState({ search: value })
-        (this.state.search.length > 2) && this.reload(this.state.search)
+    handleChange = async e => {
+        let value = e.target.value;
+        this.setState({ search: value, mainList: this.state.mainList, mainLoading: false, nowTime: new Date() });
+        // await console.warn(this.state.search)
+        // await (this.state.search.length > 2) && this.reload(this.state.search);
+        if (this.state.search.length > 2) {
+            this.reload(this.state.search)
+        }
     }
 
     componentDidMount = () => {
@@ -47,7 +55,7 @@ class PageQuery extends Component {
     }
 
     render () {
-        console.log(this.state.listNews)
+        // console.log(this.state.listNews)
         return (
             <React.Fragment>
                 <div className="body-kabar">

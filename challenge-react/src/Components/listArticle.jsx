@@ -16,7 +16,7 @@ const calculateDifference = (now, then) => {
         } else {
             stringTime = " " + diff / (7 * 24 * 3600 * 1000) + " weeks ago"
         }
-    console.log(stringTime)
+    // console.log(stringTime)
 }
 class ComponentListArticle extends Component {
     

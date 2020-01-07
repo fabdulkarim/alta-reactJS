@@ -28,13 +28,13 @@ class NewHeader extends Component {
                                     <li><Link to="/profile">Profil</Link></li>
                                     {
                                         this.props.isQuery !== undefined 
-                                            ? <li onClick={this.props.int("technology")}>Teknologi</li>
+                                            ? <li onClick={()=>this.props.int("technology")}>Teknologi</li>
                                             : <li><Link to="/category/technology">Teknologi</Link></li>
                                     }
                                     {
                                         this.props.isQuery !== undefined 
-                                            ? <li onClick={this.props.int("entertaintment")}>Hiburan</li>
-                                            : <li><Link to="/category/entertaintment">Hiburan</Link></li>
+                                            ? <li onClick={()=>this.props.int("sports")}>Olahraga</li>
+                                            : <li><Link to="/category/sports">Olahraga</Link></li>
                                     }
                                 </ul>
                             </div>
@@ -43,7 +43,7 @@ class NewHeader extends Component {
                     <div className="col-md-6">
                         <div className="row align-items-center">
                             <div className="col-md-6 align-items-center">
-                                <input className="form-control" type="text" placeholder="search" onChange={this.props.lakukanPencarian} value={this.props.sementara}/>
+                                <input className="form-control" type="text" name="search" placeholder="search" onChange={this.props.lakukanPencarian} value={this.props.sementara}/>
                             </div>
                             <div className="col-md-6">
                                 <ul className="nav--list d-flex align-self-center list-unstyled">
