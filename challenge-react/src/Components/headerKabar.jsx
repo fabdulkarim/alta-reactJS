@@ -19,10 +19,14 @@ class ComponentHeaderKabar extends Component {
                             <div className="col-md-7 outer-nav d-flex align-items-center">
                             
                                 <ul className="nav--list d-flex align-self-center list-unstyled">
-                                    <li>Sepakbola</li>
-                                    <li>Ekonomi</li>
-                                    <li>Politik</li>
-                                    <li>Hiburan</li>
+                                    <li onClick={() => this.props.reload("sports")}>Olahraga</li>
+                                    {/* <li><a href="" onClick={this.props.reload("business")}>Bisnis</a></li>
+                                    <li><a href="" onClick={this.props.reload("technology")}>Teknologi</a></li>
+                                    <li><a href="" onClick={this.props.reload("entertainment")}>Hiburan</a></li> */}
+                                    {/* <li>Olahraga</li> */}
+                                    <li onClick={() => this.props.reload("business")}>Bisnis</li>
+                                    <li onClick={() => this.props.reload("technology")}>Teknologi</li>
+                                    <li onClick={() => this.props.reload("entertainment")}>Hiburan</li>
                                 </ul>
                             
                             </div>
