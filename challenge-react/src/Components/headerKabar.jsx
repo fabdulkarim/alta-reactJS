@@ -4,7 +4,7 @@ import Logo from "../logo.svg"
 class ComponentHeaderKabar extends Component {
     render () {
         return (
-            <div className="container-fluid">
+            <div className="header-lama container-fluid">
                 <div className="row align-items-center">
                     <div className="col-md-6">
                         <div className="row align-items-center">

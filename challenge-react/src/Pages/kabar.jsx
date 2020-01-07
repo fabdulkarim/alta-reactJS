@@ -22,7 +22,7 @@ class PageKabar extends Component {
     filterOut = () => {
         const self = this;
         const scoop = this.state.mainList.filter(function(item){
-            return item.urlToImage != null
+            return (item.urlToImage != null) && (item.source.name !== "Bisnis.com")
         })
         self.setState({ mainList: scoop })
     }
