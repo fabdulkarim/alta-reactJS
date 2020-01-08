@@ -14,7 +14,7 @@ const calculateDifference = (now, then) => {
         } else if (diff < (7 * 24 * 3600 * 1000)) {
             stringTime = " " + Math.floor(diff / (24 * 3600 * 1000)) + " days ago"
         } else {
-            stringTime = " " + diff / (7 * 24 * 3600 * 1000) + " weeks ago"
+            stringTime = " " + Math.floor(diff / (7 * 24 * 3600 * 1000)) + " weeks ago"
         }
     // console.log(stringTime)
 }
