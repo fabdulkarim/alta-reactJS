@@ -1,18 +1,16 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom"
+import { Redirect, withRouter } from "react-router-dom"
 //using newHeader
 import NewHeader from "../Components/newHeader";
 
-class PageProfile extends Component {
-    state = {
-        fullName:localStorage.getItem("Nama Lengkap"),
-        groupNumber:localStorage.getItem("Nomor di Grup"),
-        photoUrl:localStorage.getItem("Foto Mbaknya"),
-        isLogin:localStorage.getItem("Is Login")
-    }
-    
+//using unistore
+import { connect } from "unistore/react"
+// this should be a static page, no?
+// import { action } from "../store" 
+
+class PageProfile extends Component {   
     render () {
-        if (this.state.isLogin === null) {
+        if (this.props.is_login !== true) {
             return <Redirect to={{ pathname:"/signin" }} />;
         } else {
             return (
@@ -26,13 +24,13 @@ class PageProfile extends Component {
                             <div className="col-md-8">
                                 <form className="form-thingy--kotak">
                                     <div className="form-group">
-                                        Nama Lengkap: {this.state.fullName}
+                                        Nama Lengkap: {this.props.full_name}
                                     </div>
-                                    <div className="form-group">
+                                    {/* <div className="form-group">
                                         Nomor Urut di Grup: {this.state.groupNumber}
-                                    </div>
+                                    </div> */}
                                     <div className="form-group text-center">
-                                        <img src={this.state.photoUrl} alt="mbak cantik" style={{maxHeight: "300px"}} />
+                                        <img src={this.props.url_to_image} alt="mbak cantik" style={{maxHeight: "300px"}} />
                                     </div>
                                 </form>
                             </div>
@@ -44,4 +42,4 @@ class PageProfile extends Component {
     }
 }
 
-export default PageProfile;
+export default connect("is_login, full_name, url_to_image")(withRouter(PageProfile));
