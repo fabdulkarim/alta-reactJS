@@ -18,9 +18,9 @@ class NewHeader extends Component {
         return (
             <div className="header-lama container-fluid">
                 <div className="row align-items-center">
-                    <div className="col-md-6">
+                    <div className="col-6">
                         <div className="row align-items-center">
-                            <div className="col-md-5 d-flex align-items-center">
+                            <div className="col-5 d-flex align-items-center">
                                 <div className="header-logo-2 text-center">
                                     <img src={Logo} alt=""/>
                                 </div>
@@ -28,7 +28,7 @@ class NewHeader extends Component {
                                     KabarKabar
                                 </div>
                             </div>
-                            <div className="col-md-7 outer-nav d-flex align-items-center">
+                            <div className="col-7 outer-nav d-flex align-items-center">
                                 <ul className="nav--list d-flex align-items-center list-unstyled">
                                     <li><Link to="/">Beranda</Link></li>
                                     <li><Link to="/profile">Profil</Link></li>
@@ -46,12 +46,12 @@ class NewHeader extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-6">
                         <div className="row align-items-center">
-                            <div className="col-md-6 align-items-center">
+                            <div className="col-6 align-items-center">
                                 <input id="search" className="form-control" type="text" name="search" placeholder="search" onChange={e => this.props.lakukanPencarian(e)} value={this.props.sementara}/>
                             </div>
-                            <div className="col-md-6">
+                            <div className="col-6">
                                 <ul className="nav--list d-flex align-self-center list-unstyled">
                                     {
                                         this.props.is_login ? <li onClick={() => this.signOut()}>Keluar</li> : <li><Link to="/signin">Masuk</Link></li> 
