@@ -6,8 +6,8 @@ import { stat } from "fs";
 import axios from "axios"
 const apiKey = "485a6bc08eca4546a902aa3f87808b0c";
 const baseUrl = "https://newsapi.org/v2";
-// const urlCombined = baseUrl + "/top-headlines?country=id&apiKey=" + apiKey;
-const urlCombined = baseUrl + "/top-headlines?apiKey=" + apiKey;
+const urlCombined = baseUrl + "/top-headlines?country=us&apiKey=" + apiKey;
+//const urlCombined = baseUrl + "/top-headlines?apiKey=" + apiKey;
 
 const initState = {
     full_name: "",
