@@ -15,9 +15,12 @@ class PageQuery extends Component {
 
     handleChange = async e => {
         let value = e.target.value;
-        this.setState({ search: value, mainList: this.state.mainList, mainLoading: false, nowTime: await new Date() });
-        if (this.state.search.length > 2) {
-            this.reload(this.state.search)
+        this.props.handleInput({"key":"search","value":value});
+        //ini juga harus di async supaya nunggu search value terupdate sebelum
+        //buka request baru
+        await console.log(value);
+        if (this.props.search.length > 2) {
+            this.props.reload(this.props.match.params.cat, this.props.search)
         }
     }
 
@@ -54,4 +57,3 @@ class PageQuery extends Component {
     }
 }
 export default connect("main_list,main_loading,now_time,search",actions)(withRouter(PageQuery));
-// export default PageQuery;
