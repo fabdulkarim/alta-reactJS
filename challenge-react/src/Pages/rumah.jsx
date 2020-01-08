@@ -12,6 +12,7 @@ import { actions } from "../store"
 class PageRumah extends Component {
 
     componentDidMount = () => {
+        this.props.handleInput({"key":"is_query","value":false})
         this.props.reload("general")
     }
 
