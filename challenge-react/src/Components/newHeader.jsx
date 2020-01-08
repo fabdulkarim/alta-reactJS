@@ -48,7 +48,7 @@ class NewHeader extends Component {
                             <div className="col-md-6">
                                 <ul className="nav--list d-flex align-self-center list-unstyled">
                                     {
-                                        (localStorage.getItem("Is Login") == null) ? <li><Link to="/signin">Masuk</Link></li> : <li onClick={() => this.signOut()}>Keluar</li>
+                                        (localStorage.getItem("Is Login") !== "true") ? <li><Link to="/signin">Masuk</Link></li> : <li onClick={() => this.signOut()}>Keluar</li>
                                     }   
                                     <li>Daftar</li>                                    
                                 </ul>
