@@ -49,7 +49,7 @@ class NewHeader extends Component {
                     <div className="col-md-6">
                         <div className="row align-items-center">
                             <div className="col-md-6 align-items-center">
-                                <input className="form-control" type="text" name="search" placeholder="search" onChange={this.props.lakukanPencarian} value={this.props.sementara}/>
+                                <input id="search" className="form-control" type="text" name="search" placeholder="search" onChange={e => this.props.lakukanPencarian(e)} value={this.props.sementara}/>
                             </div>
                             <div className="col-md-6">
                                 <ul className="nav--list d-flex align-self-center list-unstyled">

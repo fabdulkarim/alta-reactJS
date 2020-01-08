@@ -5,14 +5,16 @@ import NewHeader from "../Components/newHeader";
 
 //using unistore
 import { connect } from "unistore/react"
+import { actions } from "../store";
 // this should be a static page, no?
-// import { action } from "../store" 
+import { action } from "../store" 
 
 class PageProfile extends Component {   
     render () {
         if (this.props.is_login !== true) {
             return <Redirect to={{ pathname:"/signin" }} />;
         } else {
+            this.props.handleInput({"key":"is_query","value":false})
             return (
                 <React.Fragment>
                     <div className="body-kabar">
@@ -42,4 +44,4 @@ class PageProfile extends Component {
     }
 }
 
-export default connect("is_login, full_name, url_to_image")(withRouter(PageProfile));
+export default connect("is_login, full_name, url_to_image",actions)(withRouter(PageProfile));

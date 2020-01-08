@@ -34,6 +34,7 @@ class PageSignIn extends Component {
         if (this.props.is_login === true) {
             return <Redirect to={{ pathname:"/profile" }} />;
         } else {
+            this.props.handleInput({"key":"is_query","value":false})
             return (
                 <React.Fragment>
                 <div className="body-kabar">

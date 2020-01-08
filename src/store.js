@@ -6,7 +6,8 @@ import { stat } from "fs";
 import axios from "axios"
 const apiKey = "485a6bc08eca4546a902aa3f87808b0c";
 const baseUrl = "https://newsapi.org/v2";
-const urlCombined = baseUrl + "/top-headlines?country=id&apiKey=" + apiKey;
+// const urlCombined = baseUrl + "/top-headlines?country=id&apiKey=" + apiKey;
+const urlCombined = baseUrl + "/top-headlines?apiKey=" + apiKey;
 
 const initState = {
     full_name: "",
@@ -35,10 +36,10 @@ export const actions = store => ({
     },
 
     reload: async (state, ...restArgument) => {
+        // total harus async
         const category = restArgument[0]
-        console.log(category)
         let newUrl, local;
-        (restArgument.length == 1) ? newUrl = urlCombined + "&category=" + category : newUrl = urlCombined + "&q=" + restArgument[1]
+        (restArgument.length === 1) ? newUrl = urlCombined + "&category=" + category : newUrl = urlCombined + "&q=" + restArgument[1]
         await axios.get(newUrl + "&pageSize=10")
             .then(function (response) {
                 local = response.data;
